@@ -27,13 +27,13 @@ add com.github.lzyzsd.jsbridge.BridgeWebView to your layout, it is inherited fro
         @Override
         public void handler(String data, CallBackFunction function) {
             Log.i(TAG, "handler = submitFromWeb, data from web = " + data);
-            function.onCallBack("submitFromWeb exe, response data from Java");
+            function.onCallBack("submitFromWeb exe, response data from ArkTS");
         }
     });
 
 ```
 
-js can call this Java handler method "submitFromWeb" through:
+js can call this ArkTS handler method "submitFromWeb" through:
 
 ```javascript
 
@@ -41,7 +41,7 @@ js can call this Java handler method "submitFromWeb" through:
         'submitFromWeb'
         , {'param': str1}
         , function(responseData) {
-            document.getElementById("show").innerHTML = "send get responseData from java, data = " + responseData
+            document.getElementById("show").innerHTML = "send get responseData from ArkTS, data = " + responseData
         }
     );
 
@@ -54,7 +54,7 @@ js can call this Java handler method "submitFromWeb" through:
 ```javascript
 
     WebViewJavascriptBridge.registerHandler("functionInJs", function(data, responseCallback) {
-        document.getElementById("show").innerHTML = ("data from Java: = " + data);
+        document.getElementById("show").innerHTML = ("data from ArkTS: = " + data);
         var responseData = "Javascript Says Right back aka!";
         responseCallback(responseData);
     });
@@ -111,7 +111,7 @@ function setupWebViewJavascriptBridge(callback) {
 }
 ```
 
-Call `setupWebViewJavascriptBridge` and then use the bridge to register handlers or call Java handlers:
+Call `setupWebViewJavascriptBridge` and then use the bridge to register handlers or call ArkTS handlers:
 
 ```javascript
 setupWebViewJavascriptBridge(function(bridge) {
