@@ -1,0 +1,41 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/dxm/.ohos/config/auto_debug_JsBridgeHarmony_com.guofeng.jsbridgeharmony_2850086000348456414.cer",
+          "storePassword": "0000001BC8DB8664146B3E99B00D9A3F16D87A510066F1160BCD404656CEFDC30BF54B6C22C85AF7A87771",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B9E297D7282CB7210F8E3E3C72A5D9640E17A7B2F3C7D418D5E846961378FC45637052095B7E229",
+          "profile": "/Users/dxm/.ohos/config/auto_debug_JsBridgeHarmony_com.guofeng.jsbridgeharmony_2850086000348456414.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/dxm/.ohos/config/auto_debug_JsBridgeHarmony_com.guofeng.jsbridgeharmony_2850086000348456414.p12"
+        }
+      }
+    ],
+    "compileSdkVersion": 9,
+    "compatibleSdkVersion": 9,
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
