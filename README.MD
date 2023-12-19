@@ -17,7 +17,7 @@ It provides safe and convenient way to call ArkTS code from js and call js code 
 
 ## Use it in ArkTS
 
-add com.github.lzyzsd.jsbridge.BridgeWebView to your layout, it is inherited from WebView.
+
 ### add BridgeWebView UI  to your build
 ```typescript
 build()
