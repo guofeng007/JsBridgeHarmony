@@ -6,47 +6,45 @@
 >
 
     <META http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
 <div>Hello World</div>
 
 
-
 <!--调用原生方法-->
-<button type="button" onclick="window.jsBridge.callNaMethod()">点击调用原生界面方法</button>
+<button type="button" onclick="callNativeMethod()">点击调用原生界面方法</button>
+<br/>
+<br/>
+<br/>
+<button type="button" onclick="callYeppy()">点击调用动态yeepy方法</button>
+
+
 </body>
 
 <script type="text/javascript">
-(function (designWidth) {
-  const dEl = document.documentElement;
-  let meta = document.querySelector("meta[name=viewport]");
 
-  // 页面中不存在 <meta name="viewport" /> 时，手动创建一个
-  if(!meta) {
-    meta = document.createElement('meta');
-    meta.setAttribute('name', 'viewport');
-    document.head.appendChild(meta);
+
+
+
+
+function callNativeMethod() {
+     var param = {method:'hello',value:'world',callback:'callH5Method'};
+      window.jsBridge.call(JSON.stringify(param));
   }
 
-  function setMetaContent(){
-    const deviceWidth = dEl.clientWidth;
-    const scale = deviceWidth / designWidth;
 
-    const content = `width=${deviceWidth}, initial-scale=${scale}`;
-
-    meta.setAttribute("content", content);
+function callYeppy() {
+     var param = {method:'yeppy',value:'world',callback:'callH5Method'};
+      window.jsBridge.call(JSON.stringify(param));
   }
 
-  setMetaContent();
-
-  window.addEventListener("resize", setMetaContent)
-
-})(750);
-  function callH5Method() {
-      console.info('Ark Web Component');
-      alert("调用了H5方法")
-      return "调用了H5方法"
+  function callH5Method(result) {
+      console.info('from native: '+result);
+      alert(result);
+      return "调用了H5方法";
   }
+
 </script>
 </html>
