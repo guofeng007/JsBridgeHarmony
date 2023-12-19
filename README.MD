@@ -1,24 +1,25 @@
-# JsBridge
+
+
+# JsBridge 鸿蒙版本
 
 -----
+https://github.com/guofeng007/JsBridgeHarmony
+## 背景
+在安卓原生app上，很多经常变更的需求或者营销活动，都是通过h5网页来实现的，而且有些功能依赖安卓原生能力，比如相机、通讯录，这个时候h5是没办法的。
+JsBridge通过js和原生通讯，来解决这个问题。
 
-inspired and modified from [this](https://github.com/jacin1/JsBridge) and [lzyzsd/jsbridge](https://github.com/lzyzsd/JsBridge) and wechat jsBridge file, with some bugs fix and feature enhancement.
+本项目参考 [this](https://github.com/jacin1/JsBridge) and [lzyzsd/jsbridge](https://github.com/lzyzsd/JsBridge) and wechat jsBridge file
 
-This project make a bridge between ArkTS and JavaScript.
+这个项目主要是用来在 ArkTS 和网页 JavaScript之间做通信。
 
-It provides safe and convenient way to call ArkTS code from js and call js code from ArkTS.
-
-## Demo
-
-## Usage
-
-## SourceCode
+![11](https://p.ipic.vip/b2o9vu.jpg)
 
 
-## Use it in ArkTS
+
+##  ArkTS 使用
 
 
-### add BridgeWebView UI  to your build
+### 添加UI组件 BridgeWebView
 ```typescript
 build()
 {
@@ -31,7 +32,7 @@ build()
 ```
 
 
-### Register a ArkTS handler function so that js can call
+### 注册Native能力
 
 ```typescript
 import {JsBridge,JsCallback} from '../common/JsBridge';
@@ -52,7 +53,7 @@ JsBridge.getInstance().register("hello",(param:string,callback:JsCallback )=>{
 
 ```
 
-js can call this ArkTS handler method "submitFromWeb" through:
+### h5通过如下方法调用端能力
 
 ```javascript
 
@@ -67,3 +68,7 @@ function callNativeMethod() {
 ## License
 
 This project is licensed under the terms of the MIT license.
+
+
+开源代码地址：
+https://github.com/guofeng007/JsBridgeHarmony
