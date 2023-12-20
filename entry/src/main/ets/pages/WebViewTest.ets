@@ -1,7 +1,6 @@
 import router from '@ohos.router';
-import {JsBridge,JsCallback} from '../common/JsBridge';
+import {JsBridge,JsCallback,BridgeWebView} from "JsBridge";
 import webview from '@ohos.web.webview';
-import {BridgeWebView} from '../view/BridgeWebView';
 @Entry
 @Component
 struct Index {

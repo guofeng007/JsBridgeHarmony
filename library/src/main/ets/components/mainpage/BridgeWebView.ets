@@ -1,6 +1,6 @@
 import webView from '@ohos.web.webview';
 import promptAction from '@ohos.promptAction';
-import { JsBridge } from '../common/JsBridge';
+import { JsBridge } from '../../common/JsBridge';
 
 @Component
 export struct BridgeWebView {
